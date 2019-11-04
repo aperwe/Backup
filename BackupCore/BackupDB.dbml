@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="QBitsBackup" Class="BackupDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=XENOBI\SQLEXPRESS;Initial Catalog=QBitsBackup;Integrated Security=True;Pooling=False" SettingsObjectName="BackupCore.Properties.Settings" SettingsPropertyName="QBitsBackupConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Files" Member="Files">
+    <Type Name="File">
+      <Column Name="FullPath" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="FileState_File" Member="FileState" ThisKey="StateID" OtherKey="ID" Type="FileState" IsForeignKey="true" />
+      <Association Name="Run_File" Member="Run" ThisKey="RunID" OtherKey="ID" Type="Run" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FileStates" Member="FileStates">
+    <Type Name="FileState">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="FileState_File" Member="Files" ThisKey="ID" OtherKey="StateID" Type="File" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Runs" Member="Runs">
+    <Type Name="Run">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Run_File" Member="Files" ThisKey="ID" OtherKey="RunID" Type="File" />
+      <Association Name="User_Run" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="User_Run" Member="Runs" ThisKey="ID" OtherKey="UserID" Type="Run" />
+    </Type>
+  </Table>
+</Database>

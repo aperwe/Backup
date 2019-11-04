@@ -1,0 +1,148 @@
+<?xml version="1.0" standalone="yes"?>
+<qbits:BackupConfiguration xmlns:qbits="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-1</ID>
+    <Location>C:\Media\Books</Location>
+    <Priority>1</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-2</ID>
+    <Location>C:\Users\Artur\Documents\Flight Simulator X Files</Location>
+    <Priority>2</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-3</ID>
+    <Location>C:\Users\Artur\Documents\My Games</Location>
+    <Priority>3</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-4</ID>
+    <Location>C:\Users\Artur\Documents\NFS Undercover</Location>
+    <Priority>4</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-5</ID>
+    <Location>C:\Users\Artur\Documents\Visual Studio 2008</Location>
+    <Priority>5</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-6</ID>
+    <Location>C:\Users\Artur\Documents\warblade</Location>
+    <Priority>6</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-7</ID>
+    <Location>C:\Users\Artur\Documents\WiFi configs</Location>
+    <Priority>7</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-8</ID>
+    <Location>C:\Media\DVDs</Location>
+    <Priority>8</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-9</ID>
+    <Location>C:\Media\Blu-ray movies</Location>
+    <Priority>9</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-10</ID>
+    <Location>C:\Instalki</Location>
+    <Priority>10</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-11</ID>
+    <Location>C:\Users\Artur\Music</Location>
+    <Priority>11</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-12</ID>
+    <Location>C:\Media\Music</Location>
+    <Priority>12</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-13</ID>
+    <Location>C:\Media\Music extra</Location>
+    <Priority>13</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-14</ID>
+    <Location>C:\Users\Artur\Pictures\Zdjęcia z działki</Location>
+    <Priority>14</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-15</ID>
+    <Location>C:\Media\Icons</Location>
+    <Priority>15</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-16</ID>
+    <Location>C:\Media\Pictures</Location>
+    <Priority>16</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-17</ID>
+    <Location>C:\Praca</Location>
+    <Priority>17</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-18</ID>
+    <Location>C:\Sandbox</Location>
+    <Priority>18</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-19</ID>
+    <Location>C:\Media\Videos</Location>
+    <Priority>19</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-20</ID>
+    <Location>C:\SVN</Location>
+    <Priority>20</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-21</ID>
+    <Location>C:\Tools</Location>
+    <Priority>21</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-22</ID>
+    <Location>C:\Users\Artur\Contacts</Location>
+    <Priority>22</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-23</ID>
+    <Location>C:\Users\Artur\Desktop</Location>
+    <Priority>23</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-24</ID>
+    <Location>C:\Users\Artur\Downloads</Location>
+    <Priority>24</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-25</ID>
+    <Location>C:\Users\Artur\Favorites</Location>
+    <Priority>25</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-26</ID>
+    <Location>C:\Users\Artur\Mail</Location>
+    <Priority>26</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-27</ID>
+    <Location>C:\Users\Artur\Programming</Location>
+    <Priority>27</Priority>
+  </BackupLocations>
+  <BackupLocations xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-28</ID>
+    <Location>C:\Users\Artur\Saved Games</Location>
+    <Priority>28</Priority>
+  </BackupLocations>
+  <DatabaseParameters xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd">
+    <ID>-1</ID>
+    <ParameterName>BackupTargetFolder</ParameterName>
+    <ParameterValue>D:\Backup</ParameterValue>
+  </DatabaseParameters>
+</qbits:BackupConfiguration>

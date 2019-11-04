@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BackupConfiguration" targetNamespace="http://backup.q-bits.com.pl/BackupConfiguration.xsd" xmlns:mstns="http://backup.q-bits.com.pl/BackupConfiguration.xsd" xmlns="http://backup.q-bits.com.pl/BackupConfiguration.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="NotPublic" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BackupConfiguration" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:Prefix="qbits" msprop:Generator_UserDSName="BackupConfiguration" msprop:Generator_DataSetName="BackupConfiguration" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BackupLocations" msprop:Generator_UserTableName="BackupLocations" msprop:Generator_RowDeletedName="BackupLocationsRowDeleted" msprop:Generator_RowChangedName="BackupLocationsRowChanged" msprop:Generator_RowClassName="BackupLocationsRow" msprop:Generator_RowChangingName="BackupLocationsRowChanging" msprop:Generator_RowEvArgName="BackupLocationsRowChangeEvent" msprop:Generator_RowEvHandlerName="BackupLocationsRowChangeEventHandler" msprop:Generator_TableClassName="BackupLocationsDataTable" msprop:Generator_TableVarName="tableBackupLocations" msprop:Generator_RowDeletingName="BackupLocationsRowDeleting" msprop:Generator_TablePropName="BackupLocations">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Location" msprop:Generator_UserColumnName="Location" msprop:Generator_ColumnVarNameInTable="columnLocation" msprop:Generator_ColumnPropNameInRow="Location" msprop:Generator_ColumnPropNameInTable="LocationColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Priority" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_UserColumnName="Priority" msprop:Generator_ColumnVarNameInTable="columnPriority" msprop:Generator_ColumnPropNameInRow="Priority" msprop:Generator_ColumnPropNameInTable="PriorityColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DatabaseParameters" msprop:Generator_UserTableName="DatabaseParameters" msprop:Generator_RowDeletedName="DatabaseParametersRowDeleted" msprop:Generator_RowChangedName="DatabaseParametersRowChanged" msprop:Generator_RowClassName="DatabaseParametersRow" msprop:Generator_RowChangingName="DatabaseParametersRowChanging" msprop:Generator_RowEvArgName="DatabaseParametersRowChangeEvent" msprop:Generator_RowEvHandlerName="DatabaseParametersRowChangeEventHandler" msprop:Generator_TableClassName="DatabaseParametersDataTable" msprop:Generator_TableVarName="tableDatabaseParameters" msprop:Generator_RowDeletingName="DatabaseParametersRowDeleting" msprop:Generator_TablePropName="DatabaseParameters">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ParameterName" msprop:Generator_UserColumnName="ParameterName" msprop:Generator_ColumnPropNameInRow="ParameterName" msprop:Generator_ColumnVarNameInTable="columnParameterName" msprop:Generator_ColumnPropNameInTable="ParameterNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ParameterValue" msprop:Generator_UserColumnName="ParameterValue" msprop:Generator_ColumnPropNameInRow="ParameterValue" msprop:Generator_ColumnVarNameInTable="columnParameterValue" msprop:Generator_ColumnPropNameInTable="ParameterValueColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BackedUpFiles" msprop:Generator_UserTableName="BackedUpFiles" msprop:Generator_RowDeletedName="BackedUpFilesRowDeleted" msprop:Generator_RowChangedName="BackedUpFilesRowChanged" msprop:Generator_RowClassName="BackedUpFilesRow" msprop:Generator_RowChangingName="BackedUpFilesRowChanging" msprop:Generator_RowEvArgName="BackedUpFilesRowChangeEvent" msprop:Generator_RowEvHandlerName="BackedUpFilesRowChangeEventHandler" msprop:Generator_TableClassName="BackedUpFilesDataTable" msprop:Generator_TableVarName="tableBackedUpFiles" msprop:Generator_RowDeletingName="BackedUpFilesRowDeleting" msprop:Generator_TablePropName="BackedUpFiles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="SourcePath" msprop:Generator_UserColumnName="SourcePath" msprop:Generator_ColumnVarNameInTable="columnSourcePath" msprop:Generator_ColumnPropNameInRow="SourcePath" msprop:Generator_ColumnPropNameInTable="SourcePathColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TargetPath" msprop:Generator_UserColumnName="TargetPath" msprop:Generator_ColumnVarNameInTable="columnTargetPath" msprop:Generator_ColumnPropNameInRow="TargetPath" msprop:Generator_ColumnPropNameInTable="TargetPathColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:BackupLocations" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:BackupLocations" />
+      <xs:field xpath="mstns:Priority" />
+    </xs:unique>
+    <xs:unique name="DatabaseParameters_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:DatabaseParameters" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="BackedUpFiles_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:BackedUpFiles" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

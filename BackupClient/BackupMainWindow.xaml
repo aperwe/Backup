@@ -1,0 +1,177 @@
+﻿<Window x:Class="BackupClient.BackupMainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Q-Bits backup">
+	<Window.Background>
+		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="#FF9A9F63" Offset="0"/>
+			<GradientStop Color="#FF137439" Offset="1"/>
+		</LinearGradientBrush>
+	</Window.Background>
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            
+            <!-- Menu. -->
+            <RowDefinition Height="Auto"/>
+            
+            <!-- Main area. -->
+            <RowDefinition Height="*"/>
+            
+            <!-- Part of main area, place where Backup target folder is placed. -->
+            <RowDefinition Height="Auto"/>
+            
+            <!-- Bottom, general buttons. -->
+            <RowDefinition Height="Auto"/>
+            
+            <!-- Status bar at the bottom of the screen. -->
+            <RowDefinition Height="Auto"/>
+            
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*" MinWidth="50" />
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <MenuItem Header="File">
+                <MenuItem Header="Save" Click="MenuClickedSave" ToolTip="Saves the current state of configuration database."/>
+                <Separator/>
+                <MenuItem Header="Quit" Click="MenuClickedQuit" ToolTip="Quits the application."/>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Clean backup history" Click="MenuClickedCleanBackupHistory" ToolTip="Removes all records of backed up files, so that the store with backed up files is empty (for reuse)."/>
+            </MenuItem>
+        </Menu>
+
+        <!-- This is the grid on the left that shows the locations being backed up. -->
+        <GroupBox Grid.Row="1" Grid.Column="0" Header="Locations to back up">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <!-- List of locations to be backed up. -->
+                    <RowDefinition Height="*"/>
+                    <!-- Buttons to manage the list of backed up locations. -->
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <!-- List of locations on the left. -->
+                    <ColumnDefinition Width="*"/>
+                    <!-- Buttons for changing priorities. -->
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Locations being backed up. -->
+                <ListView Grid.Row="0" Grid.Column="0" x:Name="BackupLocationsList" Padding="4" Margin="4" SelectionMode="Single">
+                	<ListView.Background>
+                		<RadialGradientBrush RadiusX="0.742" RadiusY="0.666" Center="0.458,0.467" GradientOrigin="0.713,0.257">
+                			<GradientStop Color="#FFFAB90B" Offset="0.175"/>
+                			<GradientStop Color="#FF4E9445" Offset="0.988"/>
+                		</RadialGradientBrush>
+                	</ListView.Background>
+                </ListView>
+
+                <!-- Buttons for modifying priorities. -->
+                <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="4">
+
+                    <!-- Move priority up. -->
+                    <Button ToolTip="Move priority up" x:Name="ButtonMoveUp" Padding="4" Margin="4" Click="ButtonClickedPriorityUp">
+                        <Button.Content>
+                            <Grid>
+                                <Polyline Stroke="Blue"
+                                          StrokeThickness="5"
+                                          Points="5,10 5,0 8,5 5,5 2,5 5,0"
+                                          StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeDashCap="Round"/>
+                            </Grid>
+                        </Button.Content>
+                    </Button>
+
+                    <!-- Move priority down. -->
+                    <Button ToolTip="Move priority down" x:Name="ButtonMoveDown" Padding="4" Margin="4" Click="ButtonClickedPriorityDown">
+                        <Button.Content>
+                            <Grid>
+                                <Polyline Stroke="Brown"
+                                          StrokeThickness="5"
+                                          Points="5,0 5,10 8,5 5,9.5 2,5 5,10"
+                                          StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeDashCap="Round"/>
+                            </Grid>
+                        </Button.Content>
+                    </Button>
+
+                </StackPanel>
+
+                <!-- Controls for adding, removing and modifying the locations being backed up. -->
+                <WrapPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Button Content="Add" Style="{StaticResource ThemedButton}" Click="ButtonClickedAdd"/>
+                    <Button Content="Remove" Style="{StaticResource ThemedButton}" Click="ButtonClickedRemove"/>
+                </WrapPanel>
+
+            </Grid>
+        </GroupBox>
+
+        <StackPanel Grid.Row="2">
+            <!-- Backup target. -->
+            <GroupBox Header="Backup target folder">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Label VerticalAlignment="Center">Folder:</Label>
+                    <TextBox MinWidth="120" MaxWidth="240" Name="TargetOfBackup" LostFocus="TargetOfBackupFinishedEditing" VerticalAlignment="Center"/>
+                    <Button Content="Browse" Style="{StaticResource ThemedButton}" Click="ButtonClickedBrowseBackupTarget" VerticalAlignment="Center"/>
+                </StackPanel>
+            </GroupBox>
+            
+            <!-- Minor options. -->
+            <GroupBox Header="Options">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <CheckBox Grid.Column="0" x:Name="OptionResetArchive"  Content="Reset 'Archive' attribute" ToolTip="Select this option to reset 'Archive' attribute on every file that has been backed up." Click="ClickedOptionResetArchive"/>
+                    
+                    <GroupBox Grid.Column="1" Header="Backup type">
+                        <StackPanel Orientation="Vertical">
+                            <RadioButton Tag="Full" Content="Full (default)" IsChecked="True" ToolTip="Default behavior: All items in the specified directories will be backed up." Checked="BackupTypeChanged"/>
+                            <RadioButton Tag="Incremental" Content="Incremental" Checked="BackupTypeChanged">
+                                <RadioButton.ToolTip>
+                                    <TextBox TextWrapping="Wrap" MaxWidth="360" Background="Green">
+                                        When you have performed a full backup already and want to save time when running additional backups, use incremental backup. This type of backup will only include these items that are new or modified. It uses the 'Archive' attribute to determine whether a file needs to be incrementally backed-up. 'Archive' attribute gets set any time a file is created or updated. It gets reset when full backup is performed.
+                                    </TextBox>
+                                </RadioButton.ToolTip>
+                            </RadioButton>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+
+        <!-- List pane where all actions are being logged. -->
+        <ListView Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" x:Name="ActionLog" Margin="4" >
+        	<ListView.Background>
+        		<RadialGradientBrush GradientOrigin="0.792,0.184" RadiusX="0.683" RadiusY="0.683">
+        			<GradientStop Color="#FFD28C8C" Offset="0"/>
+        			<GradientStop Color="#FFD8AD52" Offset="0.793"/>
+        		</RadialGradientBrush>
+        	</ListView.Background>
+        </ListView>
+        
+        
+        
+        <!-- Panel with general buttons. -->
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Run" Style="{StaticResource ThemedButton}" Click="ButtonClickedRun"/>
+            <Button Content="Exit" Style="{StaticResource ThemedButton}" Click="ButtonClickedExit"/>
+        </StackPanel>
+        
+        <StatusBar Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+            <StatusBarItem Name="FirstPanel"/>
+            <StatusBarItem Name="SecondPanel">
+                <ProgressBar Orientation="Horizontal" Minimum="0" Maximum="1" MinHeight="10" MinWidth="160" Name="Progress"/>
+            </StatusBarItem>
+            <StatusBarItem Name="ThirdPanel"/>
+            <StatusBarItem Name="FourthPanel"/>
+        </StatusBar>
+    </Grid>
+</Window>
